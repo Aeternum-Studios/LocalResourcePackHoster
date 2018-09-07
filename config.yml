@@ -1,0 +1,5 @@
+port: 40021
+verbose: false
+localhost: false
+packs:
+  demo: "demopack.zip"

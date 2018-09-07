@@ -1,0 +1,13 @@
+name: LocalResourcePackHoster
+main: network.aeternum.bananapuncher714.localresourcepackhoster.LocalResourcePackHoster
+version: 1.0
+author: BananaPuncher714
+description: Host resource packs on your own server
+commands:
+  resourcepack:
+    description: Download a resource pack
+permissions:
+  localresourcepack.admin:
+    default: op
+  localresourcepack.user:
+    default: true
