@@ -1,5 +1,6 @@
 package network.aeternum.bananapuncher714.localresourcepackhoster.resoucepack;
 
+import java.io.Closeable;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.zip.ZipOutputStream;
 
-public class ZipWrapper {
+public class ZipWrapper implements Closeable {
 	protected final File zipFile;
 	protected FileSystem zipfs;
 	
@@ -101,14 +102,12 @@ public class ZipWrapper {
 		return zipfs;
 	}
 	
-	public boolean close() throws IOException {
+	@Override
+	public void close() throws IOException {
 		if ( zipfs != null && zipfs.isOpen() ) {
 			zipfs.close();
-			zipfs = null;
-			return true;
 		}
 		zipfs = null;
-		return false;
 	}
 }
 
